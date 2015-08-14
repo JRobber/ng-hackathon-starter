@@ -11,10 +11,12 @@ import {EventEmitter, ObservableWrapper} from 'angular2/src/facade/async';
 
 import Home from "./home";
 import RepoList from "./repo-list";
+import Deeper from "./deeper";
 
 @RouteConfig([
     {path: '/', as: "home", component:Home},
     {path: '/repo-list', as: "repo-list", component:RepoList},
+    {path: '/deeper/...', as: "deeper", component:Deeper}
 ])
 @Component({
     selector: "app"
@@ -25,6 +27,7 @@ import RepoList from "./repo-list";
         <nav>
             <a [router-link]="['/home']">Home</a>
             <a [router-link]="['/repo-list']">Repo List</a>
+            <a [router-link]="['/deeper/deeper2']">Deeper</a>
         </nav>
         <main>
             <router-outlet></router-outlet>
